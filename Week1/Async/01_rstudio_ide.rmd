@@ -1,0 +1,85 @@
+---
+title: "RStudio Basics"
+author: "cdurso"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+
+## Windows
+
+The windows shown here are basically in the default setup. You can set preferences in Tools. 
+
+### Files
+
+Here, there is already a file open. This window won't show until a file is opened or created from the toolbar. 
+
+This file is an Rmarkdown. Expository text is on a white background. Active code is in code blocks with a gray background.
+
+A new .Rmd file opens with a template in place.
+
+
+
+
+### Console
+
+You can use R from the command line as a calculator: Try typing "factorial(6)" and entering.
+
+While you can type directly on the command line in the Console, working in a .R or .Rmd file and tranferring commands by Ctrl-Enter or Command-Enter is generally preferable for keeping a record of your work. Ctrl-Enter or Command-Enter will copy across the line at the cursor. You can also highlight the exact portion to execute.
+
+```{r}
+factorial(6)
+```
+
+Assign values with "<-".
+
+```{r}
+x<--1
+y<-pi
+x*y
+z<-"This is fun"
+```
+
+
+### Environment
+
+When you assign values to variables, the variable names and summaries of the content are reported in the Environment window. Matrix-like data can be viewed in greater detail from its entry in the Environment window. This can be cleared with the broom
+
+```{r}
+mat<-matrix(c(1,2,3,4,5,678),ncol=2)
+
+```
+
+### History
+
+This is a record of all the commands issued since the history was last cleared (note the broom again). You can transfer commands from here to your Source or your Console by highlighting and using the tools at the top of the window.
+
+### Files
+
+This provides fairly standard navigation. 
+One twist: relative addresses used in your code will be based in the Working Directory, not the directory showing in this window. To change the working directory to the one shown in files, use the option in "More".
+
+```{r}
+getwd()
+```
+
+To set the working directory to the source file location, use the option in Session.
+
+### Plots
+
+Plots generated in .R files or the Console will appear here.
+
+Compare this to plots generated in .Rmd
+```{r}
+plot(1:10)
+```
+
+### Packages
+
+Extended features for R are published as "packages". This window shows your installed packages. The checked boxes are the packages linked to this session. You can select a package to link it to the session.
+
+### Help
+
+Search help topics here. The search is restricted to installed packages. This window is useful for reviewing syntax. You may prefer an internet browser for broader searches or nicer formatting.

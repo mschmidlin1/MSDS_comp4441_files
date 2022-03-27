@@ -1,0 +1,53 @@
+---
+title: "Packages"
+author: "cdurso"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Extending R
+
+(For this example to work as shown, start it without packages beyond base R linked.)
+
+A lot of functionality is available immediately when you open R, either directly or through R Studio.
+
+But more specialized tools are often in "packages" that must be installed then linked to be used in your work. Typically, a package will contain a collection of functions
+
+To be used, a package that isn't included in the base installation must be installed, either manually as below, or using the "Packages" tab. 
+
+As an example, let's try to use the string concatenation function, from the stringr package, a collection of string manipulation functions.
+
+(Mysterious workaround: if there's a non-obvious error in installing a package, installing it from the base R console sometimes works better.)
+
+
+```{r}
+str_c("Hello","World", sep=" ")
+
+install.packages("stringr")
+#detach(package: stringr)
+
+```
+
+Installed packages are made available in the current environment using the library function, either manually as below or using the "Packages" tab.
+
+```{r}
+str_c("Hello","World", sep=" ")
+
+library(stringr)
+
+str_c("Hello","World", sep=" ")
+
+#detach(package: stringr)
+```
+
+The documentation for a function typically follows a standard format,"Description", "Usage" giving the syntax for the function,"Arguments" giving descriptions of the input parameters, optional "Details" providing information about specifics of the function, "Value" detailing the items returned by the function, "See Also" for related functions, and, one hopes "Examples".
+
+The term "vignette" is used to refer to a more detailed expostion. Reading a package's vignette is often a good orientation to use of its tools.
+
+For example, for stringr, there is https://cran.r-project.org/web/packages/stringr/vignettes/stringr.html
+
+
+
